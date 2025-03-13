@@ -1,0 +1,202 @@
+/* تنسيقات عامة */
+body {
+  font-family: "Playfair Display", serif;
+  background-color: #f5f5f5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+/* تنسيقات الشهادة */
+.certificate-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.certificate-front,
+.certificate-back {
+  background: white;
+  border: 5px solid #2c3e50;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content:stretch;
+
+}
+
+.certificate-front::before,
+.certificate-back::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/logo.png");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  transform: translateX(-45%) rotate(90deg); /* تدويرها وإرجاعها للمنتصف */
+  background-position: center;
+  opacity: 0.2; /* شفافية الخلفية فقط */
+}
+
+.certificate-header {
+  text-align: start;
+  margin-bottom: 20px;
+}
+
+.certificate-header img {
+  width: 200px;
+  height: auto;
+  margin-top: 15px;
+}
+
+.qr-code {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.certificate-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-top:  25px;
+}
+
+.certificate-text {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.student-name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 20px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.course-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.signature {
+  position: absolute;
+  bottom: 110px;
+  right: 20px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.signature img {
+  position:absolute;
+  bottom: -45px;
+  right: 0;
+  width: 100px;
+  height: auto;
+}
+
+.footer {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+}
+
+.footer img {
+  width: 100%;
+  height: auto;
+}
+
+/* تنسيقات الوجه الخلفي */
+.certificate-back {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.course-duration {
+  text-align: end;
+  margin: 5px;
+  font-size: 1rem;
+  color: #555;
+  text-align: right;
+}
+
+.details-section {
+  padding: 0 0 0 20px;
+}
+
+.detail-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.detail-content {
+  font-size: 1rem;
+  color: #555;
+  text-align: justify;
+  padding-left: 80px;
+}
+
+/* تنسيقات النموذج */
+.form-container {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* تجاوب مع الشاشات الصغيرة */
+@media (max-width: 768px) {
+  .certificate-front,
+  .certificate-back {
+    padding: 20px;
+  }
+
+  .certificate-title {
+    font-size: 2rem;
+  }
+
+  .student-name {
+    font-size: 1.5rem;
+  }
+
+  .course-name {
+    font-size: 1.2rem;
+  }
+
+  .qr-code {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .form-container {
+    margin-top: 20px;
+  }
+}
